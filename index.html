@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Test</title>
+        <script type="text/javascript" src="./ui/output/ui.js"></script>
+    </head>
+    <body>
+        <div id="elm"></div>
+        <script type="text/javascript">
+            var ui = Elm.Main.init({node: document.getElementById('elm')});
+            var worker = new Worker('worker/wrapper.js');
+            ui.ports.sendRequest.subscribe((e) => worker.postMessage(e));
+         worker.onmessage = (e) => {
+             ui.ports.receiveResponse.send(e.data);
+         };
+        </script>
+    </body>
+</html>
