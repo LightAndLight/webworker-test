@@ -1,4 +1,4 @@
-port module Ports.Internal exposing (..)
+port module Worker.Ports.Internal exposing (..)
 
 import Core.Messages as Core
 import Json.Encode as Encode

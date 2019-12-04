@@ -1,9 +1,9 @@
-module Main exposing (main)
+module Worker.Main exposing (main)
 
 import Core.Messages as Core
 import Platform
 import Platform.Cmd as Cmd
-import Ports exposing (receiveRequest, sendResponse)
+import Worker.Ports exposing (receiveRequest, sendResponse)
 
 
 type Msg

@@ -1,9 +1,9 @@
-module Ports exposing (..)
+module Worker.Ports exposing (..)
 
 import Core.Messages as Core
 import Json.Decode as Decode
 import Platform.Sub as Sub
-import Ports.Internal as Internal
+import Worker.Ports.Internal as Internal
 
 
 sendResponse : Core.Response -> Cmd msg

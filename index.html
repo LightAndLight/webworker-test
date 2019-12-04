@@ -8,7 +8,7 @@
         <div id="elm"></div>
         <script type="text/javascript">
             var ui = Elm.Main.init({node: document.getElementById('elm')});
-            var worker = new Worker('worker/wrapper.js');
+            var worker = new Worker('ui/wrapper.js');
             ui.ports.sendRequest.subscribe((e) => worker.postMessage(e));
          worker.onmessage = (e) => {
              ui.ports.receiveResponse.send(e.data);
